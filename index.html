@@ -1317,40 +1317,33 @@
         }
 
         // Send STK Push - USING YOUR FRIEND'S WORKING CODE
-        async function sendSTKPush(e) {
+       async function sendSTKPush(e) {
     e.preventDefault();
 
-    // ⚡ LOG TIMESTAMP IMMEDIATELY — safe update, no logic change
-    console.log('⚡ STK PUSH CALLED AT:', Date.now());
+    console.log('⚡ STK PUSH INITIATED AT:', Date.now());
 
     if (!selectedLoan) {
         showNotification('Error', 'Please select a loan first');
         return;
     }
-    
+
     const phone = stkPhoneInput.value.trim();
     const amount = selectedLoan.fee;
-    
-    // Validate phone
+
     if (!phone || !/^07\d{8}$/.test(phone)) {
         showNotification('Invalid Phone', 'Please enter a valid 10-digit M-Pesa number starting with 07');
         return;
     }
-    
-    // Disable button and show loading
+
     sendSTKBtn.disabled = true;
     sendSTKBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending STK Push...';
-    paymentStatusBadge.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Sending Request';
+    paymentStatusBadge.innerHTML = '⌛ Request sent, awaiting prompt…';
     paymentStatusBadge.style.background = 'var(--primary-blue)';
-    
-    // Hide previous response
     stkResponse.style.display = 'none';
-    
+
     try {
-        // Generate unique transaction ID
         const local_id = `NYOTA_${Date.now()}`;
-        
-        // EXACT SAME API CALL AS YOUR FRIEND'S WORKING CODE
+
         const response = await fetch('https://api.nestlink.co.ke/runPrompt', {
             method: 'POST',
             headers: {
@@ -1366,61 +1359,79 @@
         });
 
         const data = await response.json();
-        console.log('STK Response:', data);
+        console.log('Initial STK Response:', data);
 
-        if (data.status && data.headers === 200) {
-            // SUCCESS - STK push sent
-            let successMsg = data.msg || 'STK push sent successfully!';
-            
-            if (data.data && data.data.ResponseDescription) {
-                successMsg = `${data.msg}\n${data.data.ResponseDescription}`;
-            }
-            
-            // Show success response
-            stkResponse.textContent = '✓ ' + successMsg + '\n\nPlease check your phone for the M-Pesa prompt.';
-            stkResponse.style.display = 'block';
-            stkResponse.style.background = '#d4edda';
-            stkResponse.style.color = '#155724';
-            stkResponse.style.border = '1px solid #c3e6cb';
-            
-            // Update UI
-            paymentStatusBadge.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i>STK Push Sent';
-            paymentStatusBadge.style.background = 'var(--success-green)';
-            
-            showNotification('STK Push Sent', 'Check your phone for M-Pesa prompt');
-            
-        } else {
-            // ERROR
-            let errorMsg = data.msg || 'Failed to send STK push.';
-            
-            stkResponse.textContent = '✗ ' + errorMsg + '\n\nPlease try again or contact support.';
-            stkResponse.style.display = 'block';
-            stkResponse.style.background = '#f8d7da';
-            stkResponse.style.color = '#721c24';
-            stkResponse.style.border = '1px solid #f5c6cb';
-            
-            paymentStatusBadge.innerHTML = '<i class="fas fa-times-circle" style="margin-right: 8px;"></i>Failed to Send';
-            paymentStatusBadge.style.background = 'var(--error-red)';
-            
-            showNotification('Payment Failed', errorMsg);
+        if (!data.status || data.headers !== 200) {
+            throw new Error(data.msg || 'Failed to send STK push.');
         }
+
+        // Polling function to check status every 10s
+        let attempts = 0;
+        const maxAttempts = 12; // 12*10s = 120s max wait
+        const pollInterval = 10000; // 10 seconds
+
+        const pollStatus = async () => {
+            attempts++;
+            const statusResp = await fetch(`https://api.nestlink.co.ke/checkStatus/${local_id}`, {
+                headers: { 'Api-Secret': NYOTA_API_SECRET }
+            });
+            const statusData = await statusResp.json();
+            console.log('Polling attempt', attempts, statusData);
+
+            if (statusData.status === 'SUCCESS') {
+                stkResponse.textContent = '✓ Payment Successful! Check your phone.';
+                stkResponse.style.display = 'block';
+                stkResponse.style.background = '#d4edda';
+                stkResponse.style.color = '#155724';
+                stkResponse.style.border = '1px solid #c3e6cb';
+
+                paymentStatusBadge.innerHTML = '✔ STK Push Completed';
+                paymentStatusBadge.style.background = 'var(--success-green)';
+
+                showNotification('STK Push Completed', 'Payment prompt confirmed.');
+                clearInterval(pollTimer);
+            } else if (statusData.status === 'FAILED') {
+                stkResponse.textContent = '✗ Payment failed. Try again.';
+                stkResponse.style.display = 'block';
+                stkResponse.style.background = '#f8d7da';
+                stkResponse.style.color = '#721c24';
+                stkResponse.style.border = '1px solid #f5c6cb';
+
+                paymentStatusBadge.innerHTML = '✗ Failed';
+                paymentStatusBadge.style.background = 'var(--error-red)';
+
+                showNotification('Payment Failed', 'Please try again.');
+                clearInterval(pollTimer);
+            } else if (attempts >= maxAttempts) {
+                stkResponse.textContent = '⌛ Still waiting for prompt. Please check your phone or retry.';
+                stkResponse.style.display = 'block';
+                stkResponse.style.background = '#fff3cd';
+                stkResponse.style.color = '#856404';
+                stkResponse.style.border = '1px solid #ffeeba';
+
+                paymentStatusBadge.innerHTML = '⌛ Pending';
+                paymentStatusBadge.style.background = 'var(--warning-orange)';
+                clearInterval(pollTimer);
+            }
+        };
+
+        const pollTimer = setInterval(pollStatus, pollInterval);
+        pollStatus(); // run immediately once
 
     } catch (error) {
         console.error('STK Error:', error);
-        
-        stkResponse.textContent = '✗ Network error. Please check your connection and try again.';
+
+        stkResponse.textContent = '✗ Network or API error. Please try again.';
         stkResponse.style.display = 'block';
         stkResponse.style.background = '#f8d7da';
         stkResponse.style.color = '#721c24';
         stkResponse.style.border = '1px solid #f5c6cb';
-        
-        paymentStatusBadge.innerHTML = '<i class="fas fa-times-circle" style="margin-right: 8px;"></i>Network Error';
+
+        paymentStatusBadge.innerHTML = '✗ Error';
         paymentStatusBadge.style.background = 'var(--error-red)';
-        
-        showNotification('Network Error', 'Please check your internet connection');
-        
+
+        showNotification('Network Error', error.message);
     } finally {
-        // Re-enable button
         sendSTKBtn.disabled = false;
         sendSTKBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send M-Pesa Request';
     }
